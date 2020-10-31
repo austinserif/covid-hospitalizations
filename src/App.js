@@ -1,13 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Routes from './components/Routes';
 
 //baseui imports
 import {Client as Styletron} from 'styletron-engine-atomic';
 import {Provider as StyletronProvider} from 'styletron-react';
 import {LightTheme, BaseProvider, styled} from 'baseui';
-import {StatefulInput} from 'baseui/input';
 
 const engine = new Styletron();
 
@@ -21,23 +19,22 @@ const Centered = styled('div', {
 function App() {
 
   //temporary is loading state
-  const [ isLoading, setIsLoading ] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000)
+  }, [])
 
   //conditional loading render
-  if (isLoading) {
-    return (
-      <div>
-        <img src={logo} className="App-logo" alt="logo" />
-      </div>
-    );
-  }
 
   return (
     <StyletronProvider value={engine}>
       <BaseProvider theme={LightTheme}>
         <Centered>
           <div className="App">
-            <Routes/>
+            <Routes isLoading={isLoading}/>
           </div>  
         </Centered>
       </BaseProvider>

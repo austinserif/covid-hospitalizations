@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
-import { scaleQuantile, scaleQuantize, scaleLinear } from "d3-scale";
+import { scaleQuantile } from "d3-scale";
 import { hospitalData } from '../data/hospitals';
 
 const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
@@ -25,10 +25,11 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
 
     return (
         <ComposableMap
+            height={400}
             projection="geoAlbersUsa"
             style={{
-                height:"90vh",
-                width:"100vw"        
+                height:"80vh",
+                width:"100vw !important"        
             }}
 
             projectionConfig={{
@@ -36,10 +37,11 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
             }}
             data-tip=""
           >
-            <ZoomableGroup zoom={7} center={[-119, 37.4194]}>
+            <ZoomableGroup zoom={window.innerWidth > 500 ? 3 : 5} center={[-119, 37.4194]}>
                 <Geographies geography={geoUrl}>
 
                     {({ geographies }) => 
+                        // eslint-disable-next-line
                         geographies.map(geo => {
                             if (geo.id.slice(0,2) === '06') {
                                 const curr = data[geo.properties.name];
@@ -52,7 +54,6 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
                                         stroke='black'
                                         strokeWidth='1px'
                                         onMouseEnter={() => {
-                                            const { NAME, POP_EST } = geo.properties;
                                             setTooltipContent(`${geo.properties.name}: ${curr === undefined ? 'No data for selected date' : Math.floor(Number(curr.hospitalized_covid_confirmed_patients))}`);
                                         }}
                                         onMouseLeave={() => {

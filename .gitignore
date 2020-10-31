@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#unnecessary data
+/data/ca-countrie.json
+/data/ca-hospitalizations.csv
+/name_to_fips.json
