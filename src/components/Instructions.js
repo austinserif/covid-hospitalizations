@@ -3,7 +3,6 @@ import { Notification } from 'baseui/notification'
 import '../styles/Instructions.css';
 
 const Instructions = () => {
-
     return (
         <>
             <Notification 
