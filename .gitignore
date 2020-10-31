@@ -26,3 +26,5 @@ yarn-error.log*
 /data/ca-countrie.json
 /data/ca-hospitalizations.csv
 /name_to_fips.json
+
+/helpers
