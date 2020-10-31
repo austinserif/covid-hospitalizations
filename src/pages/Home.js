@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import { Button } from 'baseui/button';
 import {Heading, HeadingLevel} from 'baseui/heading';
-import { Spinner } from 'baseui/spinner';
-
 
 const Home = () => {
     return (

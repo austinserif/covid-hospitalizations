@@ -1,5 +1,4 @@
 import './App.css';
-import { useState, useEffect } from 'react';
 import Routes from './components/Routes';
 
 //baseui imports
