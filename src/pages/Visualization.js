@@ -69,16 +69,16 @@ const Visualization = () => {
                     overrides={{Root: {style: {width: '100vw', height: '100%'}}}}
                 >
                     <StyledBody>
-                    <StatefulTooltip
-                        accessibilityType={'tooltip'}
-                        content="Covid-19 Hospitalizations by County and Date"
-                    >
-                        <StyledHead>
-                            {domain.map((col, index) => (
-                                <SmallerHeadCell className="legend-tile" style={{backgroundColor: range[index]}} key={index}>{col}</SmallerHeadCell>
-                            ))}
-                        </StyledHead>
-                    </StatefulTooltip>
+                        <StatefulTooltip
+                            accessibilityType={'tooltip'}
+                            content="Covid-19 Hospitalizations by County and Date"
+                        >
+                            <StyledHead>
+                                {domain.map((col, index) => (
+                                    <SmallerHeadCell className="legend-tile" style={{backgroundColor: range[index]}} key={index}>{col}</SmallerHeadCell>
+                                ))}
+                            </StyledHead>
+                        </StatefulTooltip>
                     </StyledBody>
                     <StyledAction>
                         <Slider 

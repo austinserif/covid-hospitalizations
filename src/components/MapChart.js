@@ -52,7 +52,8 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
                                         geography={geo}
                                         fill={curr === undefined ? '#EEE' : colorScale(Math.floor(Number(curr.hospitalized_covid_confirmed_patients)))}
                                         stroke='black'
-                                        strokeWidth='1px'
+                                        strokeWidth='.3px'
+
                                         onMouseEnter={() => {
                                             setTooltipContent(`${geo.properties.name}: ${curr === undefined ? 'No data for selected date' : Math.floor(Number(curr.hospitalized_covid_confirmed_patients))}`);
                                         }}
