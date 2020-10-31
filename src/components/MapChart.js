@@ -16,27 +16,19 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
 
     const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json";
 
-    const colorScale = scaleLinear()
-        // .domain(Object.values(data).map(d => Number(d.hospitalized_covid_confirmed_patients)))
-        .domain([0, 200, 400, 600,  800, 1000, 1200, 1400, 1600])
-        .range([
-            "#ffedea",
-            "#ffcec5",
-            "#ffad9f",
-            "#ff8a75",
-            "#ff5533",
-            "#e2492d",
-            "#be3d26",
-            "#9a311f",
-            "#782618"
-        ]);
+    const domain = [0, 25, 50, 100,  200, 400, 800, 1600, 2400];
+    const range = ["#ffedea", "#ffcec5", "#ffad9f", "#ff8a75", "#ff5533", "#e2492d", "#be3d26", "#9a311f", "#782618"];
+
+    const colorScale = scaleQuantile()
+        .domain(domain)
+        .range(range);
 
     return (
         <ComposableMap
             projection="geoAlbersUsa"
             style={{
                 height:"90vh",
-                width:"90vw"        
+                width:"100vw"        
             }}
 
             projectionConfig={{
@@ -68,11 +60,11 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
                                         }}
                                         style={{
                                             hover: {
-                                                fill: "black",
+                                                opacity: '.80',
                                                 outline: 'none'
                                             },
                                             pressed: {
-                                                fill: "white",
+                                                opacity: '.80',
                                                 outline: "none"
                                             }
                                         }}
