@@ -18,23 +18,12 @@ const Centered = styled('div', {
 
 function App() {
 
-  //temporary is loading state
-  const [ isLoading, setIsLoading ] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000)
-  }, [])
-
-  //conditional loading render
-
   return (
     <StyletronProvider value={engine}>
       <BaseProvider theme={LightTheme}>
         <Centered>
           <div className="App">
-            <Routes isLoading={isLoading}/>
+            <Routes/>
           </div>  
         </Centered>
       </BaseProvider>

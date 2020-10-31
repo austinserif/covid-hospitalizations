@@ -10,7 +10,7 @@ import { withStyle } from 'baseui';
 import Instructions from '../components/Instructions';
 import { StatefulTooltip } from 'baseui/tooltip';
 
-const Visualization = ({ isLoading }) => {
+const Visualization = () => {
 
     const domain = [0, 25, 50, 100,  200, 400, 800, 1600, 2400];
     const range = ["#ffedea", "#ffcec5", "#ffad9f", "#ff8a75", "#ff5533", "#e2492d", "#be3d26", "#9a311f", "#782618"];
