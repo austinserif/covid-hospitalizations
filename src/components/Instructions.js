@@ -8,11 +8,11 @@ const Instructions = () => {
             <Notification 
                 closeable 
                 overrides={{
-                    Body: {style: {width: 'auto'}},
+                    Body: {style: {width: 'auto', margin: '0px'}},
                 }}
             >
                 {() => (
-                    `This map is interactive! To see how Covid-19 hospitalizations in California changed between March and October,
+                    `This map is interactive. To see how Covid-19 hospitalizations in California changed between March and October,
                     move the slider to the right and left. To view the name and hospitalization statistics for a given county and date,
                     simply hover or click on that county.`
                     )}

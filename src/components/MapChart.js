@@ -28,8 +28,9 @@ const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
             height={400}
             projection="geoAlbersUsa"
             style={{
-                height:"80vh",
-                width:"100vw !important"        
+                height:"85vh",
+                width: '100%'
+                // width: `${window.innerWidth - 100}px`
             }}
 
             projectionConfig={{

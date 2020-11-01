@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
-import Visualization from '../pages/Visualization';
+import NewViz from '../pages/NewViz';
 
 const Routes = () => {
     return (
@@ -10,7 +10,7 @@ const Routes = () => {
                 <Home />
             </Route>
             <Route exact path="/map">
-                <Visualization />
+                <NewViz />
             </Route>
         </Switch>
     );

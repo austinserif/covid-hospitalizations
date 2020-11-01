@@ -11,7 +11,7 @@ const Home = () => {
                 <Heading style={{width: "80vw", maxWidth: "600px"}} styleLevel={3}>Covid-19 Hospitalizations in California by County and Date</Heading>
             </HeadingLevel>
             <div>
-                <Link id="start-map-button" to="/map"><Button>Go To Map!</Button></Link>
+                <Link id="start-map-button" to="/map"><Button>Go To Map</Button></Link>
             </div>
             
         </div>

@@ -1,4 +1,10 @@
+body, html {
+  overflow: hidden;
+}
+
 body {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,16 +19,34 @@ code {
     monospace;
 }
 
-svg {
-  width: 100vw;
+/* svg {
+  width: 80vw;
   max-width: 1000px;
   height: 80vh;
   top: 0;
-}
+} */
 
-.map-container {
+/* svg {
+  width: 100%;
+  height: 100%;
+} */
+
+.interactive-container {
+  display: flex;
+  width: 80vw;
   height: 80vh;
 }
+
+.legend-container {
+  display: flex;
+  width: 20vw;
+  height: 80vh;
+  background-color: black;
+}
+
+/* .map-container {
+  height: 80vh;
+} */
 
 .slider-card {
   height: 20vh;
@@ -32,15 +56,16 @@ svg {
   width: 100%;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   svg {
     width: 100vw;
   }
-}
+} */
 
 svg {
   display: inline-block;
   vertical-align: middle;
+  height: 100%;
 }
 
 html {

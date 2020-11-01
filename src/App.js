@@ -16,7 +16,6 @@ const Centered = styled('div', {
 });
 
 function App() {
-
   return (
     <StyletronProvider value={engine}>
       <BaseProvider theme={LightTheme}>
