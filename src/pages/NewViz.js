@@ -34,7 +34,6 @@ const NewViz = () => {
                     <Instructions/>
                     <MapChart dateString={dateString} setTooltipContent={setContent}/>
                     <ReactTooltip>{content}</ReactTooltip>
-                    {/* <Instructions/> */}
                 </div>
                 <div className="legend">
                     <StatefulTooltip
@@ -45,11 +44,10 @@ const NewViz = () => {
                     </StatefulTooltip>
                 </div>
             </div>
-            <div className="slider-container" ondragstart="event.preventDefault();
-                        event.stopPropagation();">
-                <div style={{width: '4%', height: '100%'}}></div>
+            <div className="slider-container">
+                {/* <div style={{width: '4%', height: '100%'}}></div> */}
                 <DateSlider min={min} max={max} value={value} setValue={setValue} dateArray={dateArray}/>
-                <div style={{width: '5%', height: '100%'}}></div>
+                {/* <div style={{width: '5%', height: '100%'}}></div> */}
             </div>
         </div>
     );
