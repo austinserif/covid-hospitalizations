@@ -12,9 +12,9 @@ const Instructions = () => {
                 }}
             >
                 {() => (
-                    `This map is interactive. To see how Covid-19 hospitalizations in California changed between March and October,
-                    move the slider to the right and left. To view the name and hospitalization statistics for a given county and date,
-                    simply hover or click on that county.`
+                    <><h4>Covid-19 Hospitalizations in California by County and Date</h4>
+                    <p>This map is interactive. To view changes in data over time, select and move slider.
+                        For more information about a specfic county, hover or click on the county.</p></>
                     )}
             </Notification>
         </>

@@ -18,12 +18,10 @@ const Legend = ({ domain }) => {
             content={<div>Covid-19 Hospializations</div>}
         >
             <div className="Legend vertical" style={{height: `${window.innerHeight * .85}px`, width: '50px'}}>
-
                 {
-                    domain.map((v, i) => {
+                    domain.map((v) => {
                         return (
                             <LegendTile backgroundColor="transparent" value={v}/>
-                            
                         );
                     })
                 }
