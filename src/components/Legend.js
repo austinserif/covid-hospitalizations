@@ -7,6 +7,7 @@ import {
     TRIGGER_TYPE,
 } from 'baseui/popover';
 
+/** Legend renders  */
 const Legend = ({ domain }) => {
 
     return (

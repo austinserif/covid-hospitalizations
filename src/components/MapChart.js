@@ -3,9 +3,14 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simp
 import { scaleQuantile } from "d3-scale";
 import { hospitalData } from '../data/hospitals';
 
-const MapChart = ({ setTooltipContent, dateString = '2020-06-11'}) => {
+/**
+ * MapChart component renders SVG based map all 58 counties in california. Due to the nature 
+ * of the project, URLs and scales are hard coded and the component is not designed for re-usability.
+ */
+const MapChart = ({ setTooltipContent, dateString = '2020-03-29'}) => {
 
-    const [data, setData] = useState(dateString)
+    //set current dateString into data
+    const [data, setData] = useState(dateString) //doesn't seem like this impacts much, but shouldn't initial value here be an empty array
 
     useEffect(() => {
         const updateData = () => {
