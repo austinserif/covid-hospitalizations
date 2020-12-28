@@ -14,7 +14,7 @@ const Home = () => {
     const [content, setContent] = useState("");
     const [isShowing, open, close] = useModal();
 
-    const domain = [0, 2, 4, 8, 16, 24, 48, 128];
+    const domain = [0, 2, 4, 8, 16, 32, 64, 128];
     const range = ["#ffedea", "#ffcec5", "#ffad9f", "#ff8a75", "#ff5533", "#e2492d", "#be3d26", "#9a311f", "#782618"];
 
     if (isLoading || !currentData ) {
@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
         <div className="" style={{height: "100%", width: "100%"}}>
-            <h4 style={{width: "90vw", margin: "50px", maxWidth: "600px", marginBottom: "0px"}}>Covid-19 Hospitalizations in California</h4>
+            <h6 style={{width: "90vw", margin: "50px", maxWidth: "600px", marginBottom: "0px", marginTop: "15px"}}>Covid-19 Hospitalizations in California</h6>
             <ButtonToolbar style={{alignContent: "right"}}>
                 <Button onClick={open}>About</Button>
             </ButtonToolbar>
