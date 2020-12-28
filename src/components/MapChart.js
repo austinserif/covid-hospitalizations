@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from "react";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import { scaleQuantile } from "d3-scale";
-import { hospitalData } from '../data/hospitals';
 
 /**
  * MapChart component renders SVG based map all 58 counties in california. Due to the nature 
  * of the project, URLs and scales are hard coded and the component is not designed for re-usability.
  */
-const MapChart = ({ setTooltipContent, dateString = '2020-03-29'}) => {
-
-    //set current dateString into data
-    const [data, setData] = useState(dateString) //doesn't seem like this impacts much, but shouldn't initial value here be an empty array
-
-    useEffect(() => {
-        const updateData = () => {
-            setData(() => (hospitalData[dateString]))
-        }
-        updateData();
-    }, [dateString]);
+const MapChart = ({ setTooltipContent, data }) => {
 
     const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json";
 
-    const domain = [0, 25, 50, 100,  200, 400, 800, 1600, 2400];
+
+    const domain = [0, 2, 4, 8, 16, 32, 64, 128];
     const range = ["#ffedea", "#ffcec5", "#ffad9f", "#ff8a75", "#ff5533", "#e2492d", "#be3d26", "#9a311f", "#782618"];
 
     const colorScale = scaleQuantile()
@@ -33,7 +22,7 @@ const MapChart = ({ setTooltipContent, dateString = '2020-03-29'}) => {
             height={400}
             projection="geoAlbersUsa"
             style={{
-                height:"85vh",
+                height:"100%",
                 width: '100%'
                 // width: `${window.innerWidth - 100}px`
             }}
@@ -61,7 +50,7 @@ const MapChart = ({ setTooltipContent, dateString = '2020-03-29'}) => {
                                         strokeWidth='.3px'
 
                                         onMouseEnter={() => {
-                                            setTooltipContent(`${geo.properties.name}: ${curr === undefined ? 'No data for selected date' : Math.floor(Number(curr.hospitalized_covid_confirmed_patients))}`);
+                                            setTooltipContent(`${geo.properties.name}: ${curr === undefined ? 'No data for selected date' : Number(curr.hospitalized_covid_confirmed_patients)}`);
                                         }}
                                         onMouseLeave={() => {
                                             setTooltipContent("");
